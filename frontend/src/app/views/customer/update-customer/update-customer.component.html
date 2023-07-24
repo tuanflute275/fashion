@@ -1,0 +1,16 @@
+<div class="container">
+  <a href="/#/adm/customer/read-customer" class="btn text-white btn-back">
+    <i class="fa-sharp fa-solid fa-arrow-left"></i>
+  </a>
+
+  <h3 class="text-capitalize my-5">Update Status User</h3>
+  <form [formGroup]="userFormUpdate" (ngSubmit)="handleSubmit()" >
+    <div class="form-group">
+      <label for="">Status</label>
+      <input type="text" formControlName="status" class="form-control" id="" placeholder="Enter Status">
+      <div *ngIf="!userFormUpdate.controls.status.valid" style="color: red;">status is require!</div>
+    </div>
+    <br>
+    <button type="submit" class="btn" style="background-color: #2199e8; color: #fff" [disabled]="!userFormUpdate.valid">Update</button>
+  </form>
+</div>

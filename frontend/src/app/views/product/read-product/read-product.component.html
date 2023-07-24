@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <div class="box-btn">
+      <a href="/#/product/post-product" class="btn text-white text-capitalize btn-add">add new +</a>
+      <button class="btn text-white text-capitalize btn-get" (click)="getFullData()">Get Full Data</button>
+    </div>
+    <form [formGroup]="productFormSearch" (ngSubmit)="submitSearch()" action="">
+      <div id="search-box">
+        <input type="text" id="search-box__input" formControlName="name" placeholder="Search..">
+        <button type="submit" id="search-box__btn">
+          <i class="cil-search"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+  <h3 class="text-capitalize my-5">Product management</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>CodeId</th>
+        <th>Name</th>
+        <th>price</th>
+        <th>sale_price</th>
+        <th>image</th>
+        <th>category_id</th>
+        <th>status</th>
+        <th>created_date</th>
+        <th class="text-center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data | paginate:{itemsPerPage: 8, currentPage:page} ">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.sale_price}}</td>
+        <td><img class="image_product" src="{{item.image}}" alt="image"></td>
+        <td>{{item.category_id}}</td>
+        <td>{{item.status}}</td>
+        <td>{{item.created_at}}</td>
+        <td class="text-center">
+          <a href="javascript:void();" class="btn" (click)="onEditProduct(item.id)"><i class="cil-pencil"></i></a>
+          <a href="javascript:void();" class="btn" (click)="onDeleteProduct(item.id)"><i class="cil-trash"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

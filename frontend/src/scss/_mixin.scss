@@ -1,0 +1,102 @@
+//btn1
+@mixin button1 {
+  .btn-add {
+    background: $main-color;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    border: none !important;
+    outline: none !important;
+    position: relative;
+    transition: 800ms ease all;
+    font-weight: bold;
+  }
+  .btn-add:hover {
+    background: #fff;
+    color: #000;
+    font-weight: bold;
+  }
+  .btn-add:before,
+  .btn-add:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: $main-color;
+    transition: 400ms ease all;
+  }
+  .btn-add:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
+  .btn-add:hover:before,
+  .btn-add:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+  }
+}
+
+//btn2
+@mixin button2 {
+  button {
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 5px 10px;
+    background: $main-color-2;
+    transition: 0.25s;
+    font-size: 16px;
+    &:hover {
+      background: #000;
+      color: #fff;
+    }
+  }
+}
+
+//btn 3
+@mixin button3($py, $px, $fz) {
+  button {
+    background: $main-color;
+    color: #fff;
+    text-decoration: none;
+    padding: $py $px;
+    border: none !important;
+    outline: none !important;
+    position: relative;
+    transition: 800ms ease all;
+    font-weight: bold;
+    font-size: $fz;
+  }
+  button:hover {
+    background: #fff;
+    color: #000;
+    font-weight: bold;
+  }
+  button:before,
+  button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: $main-color;
+    transition: 400ms ease all;
+  }
+  button:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
+  button:hover:before,
+  button:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+  }
+}

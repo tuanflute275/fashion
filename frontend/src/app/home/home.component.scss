@@ -1,0 +1,452 @@
+@import "../../scss/variables";
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+button.scrollToTop {
+  position: fixed;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  right: 20px;
+  z-index: 999;
+  width: 40px;
+  color: #fff;
+  height: 40px;
+  text-decoration: none;
+  background: #8f6b6c;
+  border: 1px solid #fff;
+  font-size: 24px;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 10px;
+}
+
+main {
+  margin-top: 110px;
+  .p-cus {
+    padding: 0 48px;
+  }
+  .heading {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 50px 0;
+    margin-bottom: 0 !important;
+    span {
+      color: $main-color;
+    }
+  }
+  .heading .trending {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 30px 0;
+    span {
+      color: $main-color;
+    }
+  }
+  // start card TRENDING COLLECTIONS
+  .card-trending {
+    position: relative;
+    flex: 1 1 100%;
+    margin: 0;
+    padding: $card-padding;
+    background: lighten($color-bg, 3%);
+
+    @media screen and (min-width: $medium) {
+      flex-basis: calc(33.33% - (#{$grid-gutter * 2} + #{$card-padding * 2}));
+    }
+  }
+  .card__thumb {
+    overflow: hidden;
+  }
+  .card__img {
+    margin: (-$card-padding) (-$card-padding) 0;
+    position: relative;
+
+    img {
+      max-width: 100%;
+      height: 100%;
+      height: auto;
+      border: unset;
+      vertical-align: middle;
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+  .card__desc {
+    margin-top: $card-padding;
+    position: absolute;
+    bottom: 21px;
+    left: 21px;
+    z-index: 999;
+    color: #fff;
+    background: $main-color;
+    text-transform: capitalize;
+    padding: 12px 20px;
+    transition: all 0.4s;
+    &:hover {
+      background: #999999;
+    }
+  }
+  .card__img {
+    padding: 20px;
+  }
+  .card__three {
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: scale3d(0, 0, 1);
+      transition: transform 0.3s ease-out 0s;
+      background: rgba(255, 255, 255, 0.1);
+      content: "";
+      pointer-events: none;
+    }
+
+    &::before {
+      transform-origin: left top;
+    }
+
+    &::after {
+      transform-origin: right bottom;
+    }
+
+    &:hover,
+    &:focus {
+      &::before,
+      &::after {
+        transform: scale3d(1, 1, 1);
+      }
+    }
+  }
+  // end TRENDING COLLECTIONS
+
+  //mobile
+  @media screen and (max-width: 768px) {
+    .p-cus {
+      padding: 0 10px !important;
+    }
+    .heading {
+      padding: 25px 0;
+      margin: 0 !important;
+    }
+    .heading.trending {
+      margin: 0 !important;
+      padding-top: 45px;
+      padding-bottom: 25px;
+    }
+  }
+
+  // BEST SELLING PRODUCTS
+  .show {
+    &:hover .hide-cus {
+      opacity: 1;
+    }
+    .hide-cus {
+      opacity: 0;
+      transition: all 0.5s;
+      .icon-heart {
+        top: 15px;
+        left: 15px;
+        a {
+          background-color: #fff;
+          width: 35px;
+          border-radius: 50%;
+          height: 35px;
+          text-align: center;
+          line-height: 32px;
+          display: inline-block;
+          margin-bottom: 8px;
+          &:hover img {
+            opacity: 1;
+          }
+          img {
+            max-width: 18px;
+            opacity: 0.4;
+            display: inline-block;
+          }
+        }
+      }
+      .btn-add.sale {
+        bottom: 96px;
+        width: 100%;
+      }
+      .btn-add {
+        bottom: 80px;
+        width: 100%;
+        a {
+          bottom: 0;
+          width: 100%;
+          background-color: #000;
+          text-align: center;
+          color: #fff;
+          text-decoration: none;
+          padding: 8px 15px;
+          display: inline-block;
+          text-transform: uppercase;
+          font-size: 16px;
+          transition: all 0.4s;
+          &:hover {
+            background: $main-color;
+          }
+        }
+      }
+    }
+  }
+  .card-title {
+    text-decoration: none;
+    color: #000;
+  }
+  // end best selling product
+
+  //our blog
+  .our-blog {
+    .card-blog {
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05),
+        0 15px 40px rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+    }
+    .card-blog img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+    .card-blog:hover img {
+      transform: scale(1.15);
+    }
+    .title-blog {
+      width: 100%;
+      margin: 20px 0;
+      text-align: center;
+      a {
+        text-decoration: none;
+        color: #000;
+        transition: all 0.3s;
+        font-size: 18px;
+        line-height: 35px;
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+  //end our blog
+
+  //banner-sale-1
+  .banner-sale-1 {
+    padding-top: 69px;
+    .banner-info {
+      &:hover {
+        .banner-title {
+          background: rgba(147, 127, 108, 0.85);
+        }
+      }
+      .banner-title {
+        top: 0;
+        right: 0;
+        height: 100%;
+        padding: 56px 30px;
+        color: #fff;
+        text-align: center;
+        transition: all 0.3s;
+        background: rgba($color: $main-color, $alpha: 0.8);
+        &:hover {
+          background: rgba(147, 127, 108, 0.85);
+        }
+        .banner-heading {
+          font-size: 35px;
+          line-height: 1.2;
+        }
+        .banner-sale_price {
+          color: #fff;
+          font-size: 80px;
+          border-top: 1px solid rgba(255, 255, 255, 0.55);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+          line-height: 1;
+          padding: 20px 8px 10px 8px;
+          margin: 30px 0 10px 0;
+        }
+        .banner-text {
+          font-size: 35px;
+          line-height: 1.2;
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .banner-info {
+        .banner-title {
+          padding: 30px 24px;
+          .banner-heading {
+            font-size: 20px;
+          }
+          .banner-sale_price {
+            font-size: 30px;
+            padding: 10px;
+            margin: 10px;
+          }
+          .banner-text {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+  //banner-sale-2
+  .banner-sale-2 {
+    padding-top: 50px;
+    .banner-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 40px 35px 45px;
+      max-width: 70%;
+      text-align: center;
+      border-radius: 5px;
+      .subheading {
+        font-size: 15px;
+        color: #8f6b6c;
+        line-height: 1;
+      }
+      .heading {
+        font-size: 40px;
+        color: $main-color;
+        padding: 0 !important;
+      }
+      .salePrice {
+        font-size: 115px;
+        color: #000;
+        font-family: optima;
+        border-top: 1px solid #707070;
+        border-bottom: 1px solid #707070;
+        line-height: 1;
+        padding: 20px 8px 10px;
+        margin: 25px 0 12px 0;
+      }
+      .text {
+        font-size: 20px;
+        color: #000;
+      }
+      .btn-banner {
+        margin-top: 35px;
+        a {
+          background: $main-color;
+          padding: 10px 20px;
+          text-decoration: none;
+          color: #fff;
+          transition: all 0.3s;
+          &:hover {
+            background: #000;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .banner-title {
+        padding: 0 !important;
+        padding: 15px 15px 15px;
+        .subheading {
+          font-size: 12px;
+          padding-top: 10px;
+        }
+        .heading {
+          font-size: 15px;
+          line-height: 1;
+        }
+        .salePrice {
+          font-size: 24px;
+          padding: 8px 8px 3px;
+          margin: 10px 0 8px 0;
+        }
+        .text {
+          font-size: 15px;
+        }
+        .btn-banner {
+          padding: 0;
+          margin: 0;
+          padding-bottom: 15px;
+          padding-top: 10px;
+          a {
+            padding: 5px 12px;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  //shipping_inner
+  .shipping_inner {
+    padding-top: 95px;
+    padding-bottom: 95px;
+    .single_shipping {
+      .shipping_icon {
+        margin-right: 22px;
+        i {
+          font-size: 27px;
+        }
+      }
+      .shipping_text {
+        h3 {
+          font-size: 22px;
+        }
+        p {
+          color: #999999;
+        }
+      }
+    }
+    //mobile
+    @media screen and (max-width: 768px) {
+      .single_shipping {
+        flex-direction: column !important;
+        .shipping_icon {
+          margin-right: 22px;
+          margin-bottom: 10px;
+          i {
+            font-size: 27px;
+          }
+        }
+        .shipping_text {
+          h3 {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+
+  // blog footer
+  .instagram-custom-col {
+    flex: 0 0 auto;
+    width: 12.5%;
+    padding: 0;
+    .instagram-item {
+      transition: all 0.4s;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .instagram-custom-col {
+      flex: 0 0 auto;
+      width: 50%;
+    }
+  }
+}

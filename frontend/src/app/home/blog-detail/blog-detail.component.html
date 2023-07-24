@@ -1,0 +1,119 @@
+<button class="scrollToTop" *ngIf="isShow" (click)="gotoTop()">
+  <i class="fa fa-angle-up"></i>
+</button>
+<ngx-spinner
+  bdColor="rgba(255, 255, 255)"
+  template="<img src='https://icons8.com/preloaders/preloaders/1481/Book.gif' />"
+  style="z-index: 99999999999 !important;"
+>
+</ngx-spinner>
+
+<app-header></app-header>
+
+<main>
+  <div class="img-blogbig">
+    <img [src]="blogBig" alt="">
+  </div>
+  <div class="container width-custom">
+    <div class="post-header text-center">
+      <div class="post-title">
+        <h2>How to improve the flow of UI/UX</h2>
+      </div>
+      <div class="blog_meta">
+        <ul class="d-flex justify-content-center">
+          <li>Adam Levine</li>
+          <li>December 27, 2021</li>
+          <li>INSPIRATION</li>
+        </ul>
+      </div>
+    </div>
+    <div class="blog_details_desc">
+      <h3>
+        Pinterest, cornhole meditation Blue Bottle art party meggings cardigan yr sustainable. Letterpress McSwepen,
+        poieney’s fap
+      </h3>
+      <p>Today most people get on average 4 to 6 hours of exercise every day, mauris dapibus hendrerit ipsum, eget
+        viverra ex ullamcorper a. Maecenas mi sapien, pretium id sollicitudin non, pretium pellentesque diam.
+        Suspendisse quis sapien nisi. Vivamus posuere auctor arcu sit amet tincidunt. Donec et erat at quam auctor
+        finibus et non magna. Phasellus ultricies sagittis est, id scelerisque quam.</p>
+      <p>Mauris vitae venenatis turpis. Mauris ac faucibus diam. Integer dapibus accumsan sem et feugiat. Located in the
+        heart of Warwickshire.
+      </p>
+      <blockquote>
+        <p>
+          “Phasellus egestas tellus
+        </p> <br>
+        <p>
+          feugiat dui lacinia,
+        </p> <br>
+        <p>
+          sit amet dictum nibh auctor.”
+        </p>
+
+      </blockquote>
+      <p class="author"><span>Alex Struck,</span> Designer at Mauris</p>
+      <p>Aenean vel porta ante. Nunc eu volutpat sem. Phasellus imperdiet nulla augue, at laoreet lorem bibendum
+        interdum. Quisque consequat ex in sem bibendum, in dapibus purus semper. Duis eleifend diam ex. Donec ut
+        venenatis sem. Proin sollicitudin vel enim eu facilisis. Cras aliquam tortor a ligula cursus vehicula.
+        Suspendisse vestibulum nulla dui, ac venenatis tellus tristique elementum. Aliquam rhoncus ligula leo, non
+        auctor ligula semper.
+      </p>
+    </div>
+  </div>
+  <div class="container related_posts">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-sm-12 img-mb-24">
+        <img [src]="related1" alt="">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <img [src]="related2" alt="">
+      </div>
+    </div>
+    <div class="post_tags_social">
+      <div class="post_tags d-flex justify-content-center align-items-center">
+        <span>TAGS: </span>
+        <ul class="d-flex">
+          <li>
+            <a href="">Inspiration,</a>
+          </li>
+          <li>
+            <a href="">Workspace,</a>
+          </li>
+          <li>
+            <a href="">Minimal,</a>
+          </li>
+          <li>
+            <a href="">Decoation</a>
+          </li>
+        </ul>
+      </div>
+      <div class="post__social d-flex justify-content-center align-items-center">
+        <span>SHARE: </span>
+        <ul class="d-flex">
+          <li>
+            <a href="https://twitter.com/tuanflute275" target="_blank">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=100047425502024" target="_blank">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.google.com.vn/?hl=vi" target="_blank">
+              <i class="fa-brands fa-google"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/tn791660/" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

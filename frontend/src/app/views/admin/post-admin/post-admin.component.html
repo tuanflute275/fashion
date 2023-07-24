@@ -1,0 +1,26 @@
+<div class="container">
+  <a href="/#/admin/read-admin" class="btn text-white btn-back">
+    <i class="fa-sharp fa-solid fa-arrow-left"></i>
+  </a>
+
+  <h3 class="text-capitalize my-5">Add New Admin</h3>
+  <form [formGroup]="adminFormPost" (ngSubmit)="handleSubmit()" >
+    <div class="form-group">
+      <label for="">Name</label>
+      <input type="text" formControlName="name" class="form-control" id=""  placeholder="Enter name">
+      <div *ngIf="adminFormPost.controls.name.touched && !adminFormPost.controls.name.valid" style="color: red;">name is require!</div>
+    </div>
+    <div class="form-group">
+      <label for="">Email</label>
+      <input type="text" formControlName="email" class="form-control" id="" placeholder="Enter email">
+      <div *ngIf="adminFormPost.controls.email.touched && !adminFormPost.controls.email.valid" style="color: red;">email is require!</div>
+    </div>
+    <div class="form-group">
+      <label for="">Password</label>
+      <input type="text" formControlName="password" class="form-control" id="" placeholder="Enter password">
+      <div *ngIf="adminFormPost.controls.password.touched && !adminFormPost.controls.password.valid" style="color: red;">password is require!</div>
+    </div>
+    <br>
+    <button type="submit" class="btn" style="background-color: #2199e8; color: #fff" [disabled]="!adminFormPost.valid">Submit</button>
+  </form>
+</div>

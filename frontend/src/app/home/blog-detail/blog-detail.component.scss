@@ -1,0 +1,217 @@
+@import '../../../scss/variables';
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  margin-top: 110px;
+  .width-custom {
+    width: 826px;
+    max-width: 826px;
+  }
+  .img-blogbig {
+    img {
+      width: 100%;
+      height: 700px;
+    }
+  }
+  .post-header {
+    margin: 80px 0;
+    .post-title {
+      margin-bottom: 27px;
+      color: #000;
+      h2 {
+        font-weight: 600;
+        font-size: 48px;
+      }
+    }
+    .blog_meta {
+      ul {
+        text-align: center;
+        li {
+          list-style: none;
+          color: #999999;
+          padding: 0 10px;
+          border-right: 1px solid #999;
+          &:first-child {
+            color: #000;
+          }
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+  .blog_details_desc {
+    h3 {
+      font-size: 26px;
+      line-height: 30px;
+      font-weight: 600;
+      color: #000000;
+      margin-bottom: 43px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 30px;
+      color: #666666;
+      font-weight: 400;
+    }
+    .author{
+      padding: 0 100px;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      span{
+        color: #000;
+      }
+    }
+    blockquote {
+      padding: 0 100px;
+      margin-top: 40px;
+      p {
+        font-size: 23px;
+        line-height: 15px;
+        color: #000000;
+        font-style: italic;
+        font-weight: 400;
+      }
+    }
+
+  }
+  .related_posts{
+    margin-top: 90px;
+    margin-bottom: 90px;
+    img{
+      width: 100%;
+    }
+  }
+  .post_tags_social{
+    margin: 90px 0;
+    .post_tags{
+      span{
+        color: #000;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      ul{
+        margin-top: 14px;
+        li{
+          list-style: none;
+          margin: 0 5px;
+          a{
+            text-decoration: none;
+            color: #999999;
+            &:hover{
+              color: $main-color;
+            }
+          }
+        }
+      }
+    }
+    .post__social{
+      margin-top: 20px;
+      span{
+        color: #000;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      ul{
+        margin-top: 15px;
+        li{
+          list-style: none;
+          margin: 0 10px;
+          a{
+            color: #999999;
+            transition: 0.25s;
+            text-decoration: none;
+            &:hover{
+              color: $main-color;
+            }
+            i{
+              font-size: 20px;
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //mobile
+  @media screen and (max-width: 768px) {
+    .width-custom {
+      width: auto;
+      max-width: auto;
+    }
+    .post-header {
+      margin: 80px 0;
+      .post-title {
+        margin-bottom: 10px;
+        h2 {
+          font-size: 32px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+    .img-blogbig {
+      img {
+        height: 200px;
+      }
+    }
+    .related_posts{
+      .img-mb-24{
+        margin-bottom: 24px;
+      }
+    }
+    .post-header {
+      .blog_meta {
+        ul {
+          padding: 0 !important;
+          li {
+            padding: 0 4px;
+          }
+        }
+      }
+    }
+    .blog_details_desc {
+      h3 {
+        font-size: 15px;
+        line-height: 30px;
+        margin-bottom: 43px;
+      }
+    }
+    .author{
+      padding: 0 100px;
+      font-size: 12px !important;
+    }
+    blockquote {
+      padding-bottom: 0 !important;
+      p {
+        padding: 0 !important;
+        font-size: 16px !important;
+        line-height: 30px !important;
+      }
+    }
+    .post_tags_social{
+      margin: 90px 0;
+      .post_tags{
+        span{
+          padding: 0 14px;
+        }
+        ul{
+          padding: 0 !important;
+          margin-top: 14px;
+          li{
+            margin: 0 5px;
+            a{
+                font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+    .post__social{
+      margin-top: 0 !important;
+    }
+  }
+}

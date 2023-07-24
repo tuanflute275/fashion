@@ -1,0 +1,103 @@
+<button class="scrollToTop" *ngIf="isShow" (click)="gotoTop()">
+  <i class="fa fa-angle-up"></i>
+</button>
+<ngx-spinner
+  bdColor="rgba(255, 255, 255)"
+  template="<img src='https://icons8.com/preloaders/preloaders/1490/Rhombus.gif' />"
+  style="z-index: 99999999999 !important;"
+>
+</ngx-spinner>
+
+<app-header></app-header>
+
+<main>
+  <div class="text-center box-title">
+    <nav class="breadcrumb text-center d-flex justify-content-center">
+      <a class="breadcrumb-item default" href="/#/home">Home</a>
+      <span class="breadcrumb-item active">shop</span>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="banner position-relative">
+        <img class="w-100" src="../../../assets/images/banner-shop.jpg" alt="image-banner">
+        <div class="banner-title position-absolute">
+          <h2 class="heading text-capitalize m-0">New Collection</h2>
+          <p>Get upto 20% off</p>
+          <a href="/#/home/shop">Shop Now</a>
+        </div>
+      </div>
+      <div class="col-md-3" style="margin-top: 138px;">
+        <form [formGroup]="productFormSearch" (ngSubmit)="submitSearch()" action="">
+          <div id="search-box">
+            <input type="text" id="search-box__input" formControlName="name" placeholder="Search..">
+            <button type="submit" id="search-box__btn">
+              <i class="cil-search"></i>
+            </button>
+          </div>
+        </form>
+        <div class="row mt-3">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <!-- 1 -->
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                  <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Product
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  <ul>
+                    <li [class.active]="check">
+                      <a (click)="getAllData()">Get All Product</a>
+                    </li>
+                    <li [class.active]="check" *ngFor="let item of cats">
+                      <a (click)="getCategoryById(item.id)">{{item.name}}</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+
+        <h2 class="heading text-center">
+          Women's and Men's Collection
+        </h2>
+        <div class="row">
+          <div class="col-md-4" *ngFor="let item of products | paginate:{itemsPerPage: 9, currentPage:page}">
+            <div class="card text-center border-0 position-relative">
+              <div class="show">
+                <div class="hide-cus">
+                  <div class="icon-heart position-absolute">
+                    <a (click)="onFavorite(item.id)">
+                      <img src="https://mg-fashion.mgtechnologies.co.in/assets/images/heart-icon.svg" alt="">
+                    </a>
+                  </div>
+                  <div class="btn-add position-absolute">
+                    <a (click)="onAddToCart(item)">Add To Bag</a>
+                  </div>
+                </div>
+                <a (click)="getDetailProduct(item.id)">
+                  <img class="card-img-top img-product" src="{{item.image}}" alt="image">
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">{{item.name}}</h5>
+                <p class="card-text">{{item.price | currency:"USD":"symbol":"0.0"}}</p>
+              </div>
+            </div>
+          </div>
+          <pagination-controls class="text-center mt-3" (pageChange)="page = $event"></pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

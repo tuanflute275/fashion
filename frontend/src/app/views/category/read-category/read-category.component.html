@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <div class="box-btn">
+      <a href="/#/category/post-category" class="btn text-white text-capitalize btn-add">add new +</a>
+      <button class="btn text-white text-capitalize btn-get" (click)="getFullData()">Get Full Data</button>
+    </div>
+    <form [formGroup]="categoryFormSearch" (ngSubmit)="submitSearch()" action="">
+      <div id="search-box">
+        <input type="text" id="search-box__input" formControlName="name" placeholder="Search..">
+        <button type="submit" id="search-box__btn">
+          <i class="cil-search"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+  <h3 class="text-capitalize my-5">Category management</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>CodeId</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th class="text-center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data | paginate:{itemsPerPage: 8, currentPage:page} ">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.status}}</td>
+        <td class="text-center">
+          <a href="javascript:void();" class="btn" (click)="onEditCategory(item.id)"><i class="cil-pencil"></i></a>
+          <a href="javascript:void();" class="btn" (click)="onDeleteCategory(item.id)"><i class="cil-trash"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

@@ -1,0 +1,42 @@
+<button class="scrollToTop" *ngIf="isShow" (click)="gotoTop()">
+  <i class="fa fa-angle-up"></i>
+</button>
+<ngx-spinner
+  bdColor="rgba(255, 255, 255)"
+  template="<img src='https://icons8.com/preloaders/preloaders/1490/Rhombus.gif' />"
+  style="z-index: 99999999999 !important;"
+>
+</ngx-spinner>
+
+<app-header></app-header>
+
+<main>
+  <div class="text-center box-title">
+    <nav class="breadcrumb text-center d-flex justify-content-center">
+      <a class="breadcrumb-item default" href="/#/home">Home</a>
+      <span class="breadcrumb-item active">Our Blog</span>
+    </nav>
+    <h3 class="title">OUR BLOG</h3>
+    <div class="container">
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-12 mb-5" *ngFor="let item of blogs | paginate:{itemsPerPage: 9, currentPage:page}">
+        <div class="card border-0 card-custom">
+          <div class="box-zoom-transfer">
+            <a href="/#/home/blogDetail">
+              <img class="card-img-top" src="{{item.image}}" alt="">
+            </a>
+          </div>
+          <div class="card-body text-center">
+            <p class="card-text">{{item.title}}</p>
+          </div>
+        </div>
+      </div>
+      <pagination-controls class="text-center" (pageChange)="page = $event"></pagination-controls>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

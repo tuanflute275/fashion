@@ -1,0 +1,59 @@
+@import '../../../scss/variables';
+body {
+  font-family: "Poppins", sans-serif;
+}
+button.scrollToTop {
+  position: fixed;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  right: 20px;
+  z-index: 999;
+  width: 40px;
+  color: #fff;
+  height: 40px;
+  text-decoration: none;
+  background: #8f6b6c;
+  border: 1px solid #fff;
+  font-size: 24px;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 10px;
+}
+main {
+  margin-top: 110px;
+  .box-title {
+    padding: 80px 0;
+    .default {
+      text-decoration: none;
+      color: #999999;
+      &:hover {
+        color: $main-color;
+      }
+    }
+    .title {
+      font-size: 35px;
+    }
+  }
+  img {
+    vertical-align: middle;
+  }
+  .box-zoom-transfer {
+    height: auto;
+    overflow: hidden;
+    position: relative;
+  }
+  .box-zoom-transfer img {
+    max-width: 100%;
+    transition: all 1s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  .box-zoom-transfer:hover img {
+    transform: scale(1.3) perspective(120px) rotate(-10deg);
+    -webkit-transform: scale(1.3) perspective(120px) rotate(-10deg);
+  }
+}

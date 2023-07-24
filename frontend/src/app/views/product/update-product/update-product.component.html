@@ -1,0 +1,66 @@
+<div class="container">
+  <a href="/#/product/read-product" class="btn text-white btn-back">
+    <i class="fa-sharp fa-solid fa-arrow-left"></i>
+  </a>
+
+  <h3 class="text-capitalize my-5">Update Product</h3>
+  <form [formGroup]="productFormUpdate" (ngSubmit)="handleSubmit()">
+    <div class="form-group">
+      <label for="">Name</label>
+      <input type="text" formControlName="name" class="form-control" id="" placeholder="Enter name">
+      <div *ngIf="productFormUpdate.controls.name.touched && !productFormUpdate.controls.name.valid" style="color: red;">name is require!</div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Price</label>
+          <input type="number" formControlName="price" class="form-control" id="" placeholder="Enter price">
+          <div *ngIf="productFormUpdate.controls.price.touched && !productFormUpdate.controls.price.valid" style="color: red;">price is require!</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">sale_price</label>
+          <input type="number" formControlName="sale_price" class="form-control" id="" placeholder="Enter sale_price">
+          <div *ngIf="productFormUpdate.controls.sale_price.touched && !productFormUpdate.controls.sale_price.valid" style="color: red;">sale_price is require!</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Image</label>
+          <input type="text" formControlName="image" class="form-control" id="" placeholder="Enter image">
+          <div *ngIf="productFormUpdate.controls.image.touched && !productFormUpdate.controls.image.valid" style="color: red;">image is require!</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Category_id</label>
+          <select class="form-control" formControlName="category_id">
+
+            <option value="">Danh Mục</option>
+            <option *ngFor="let item of categories" value="{{item.id}}">{{item.name}}</option>
+          </select>
+          <div *ngIf="productFormUpdate.controls.category_id.touched && !productFormUpdate.controls.category_id.valid" style="color: red;">category_id is require!</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="">Status</label>
+      <br>
+      <input type="radio" formControlName="status" value="1"> Hiển thị
+      <span class="mr-3"></span>
+      <input type="radio" formControlName="status" value="0"> Tạm ẩn
+      <div *ngIf="productFormUpdate.controls.status.touched && !productFormUpdate.controls.status.valid" style="color: red;">status is require!</div>
+    </div>
+    <div class="form-group">
+      <label for="">Description</label>
+      <textarea formControlName="description" class="description_input" placeholder="Enter description"></textarea>
+      <div *ngIf="productFormUpdate.controls.description.touched && !productFormUpdate.controls.description.valid" style="color: red;">description is require!</div>
+    </div>
+    <br>
+    <button type="submit" class="btn" style="background-color: #2199e8; color: #fff"
+      [disabled]="!productFormUpdate.valid">Submit</button>
+  </form>
+</div>

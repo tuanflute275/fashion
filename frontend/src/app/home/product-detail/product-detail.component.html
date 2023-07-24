@@ -1,0 +1,176 @@
+<button class="scrollToTop" *ngIf="isShow" (click)="gotoTop()">
+  <i class="fa fa-angle-up"></i>
+</button>
+<ngx-spinner
+  bdColor="rgba(255, 255, 255)"
+  template="<img src='https://icons8.com/preloaders/preloaders/1490/Rhombus.gif' />"
+  style="z-index: 99999999999 !important;"
+>
+</ngx-spinner>
+
+<app-header></app-header>
+
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 slider">
+        <img class="w-100" src="{{productDetail.image}}" alt="image">
+      </div>
+      <div class="col-md-6 product-details">
+        <div class="row">
+          <div class="col-md-10">
+            <h2 class="product-title">
+              {{productDetail.name}}
+            </h2>
+          </div>
+          <div class="col-md-2 text-end">
+            <div class="stock-text">
+              In stock
+            </div>
+          </div>
+        </div>
+        <div class="rating-panel d-flex align-items-center">
+          <div class="rating-star">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+          <div class="rating-count">
+            ( 100 Review)
+          </div>
+        </div>
+        <div class="product-price mt-4">
+          <span class="price"> {{productDetail.sale_price | currency:"USD":"symbol":"0.0"}}</span>
+          <span class="regular-price">{{productDetail.price | currency:"USD":"symbol":"0.0"}}</span>
+          <span class="sale-percen">{{perCentProduct | number}}% off</span>
+        </div>
+        <div class="product-color">
+          <div class="heading">
+            Colors
+          </div>
+          <div class="color">
+            <ul>
+              <li>
+                <a style="background-color: #242424; width: 21px; height: 21px;" href="/#/home/productDetail">+</a>
+              </li>
+              <li>
+                <a style="background-color: #CD5C5C;" href="/#/home/productDetail">+</a>
+              </li>
+              <li>
+                <a style="background-color: #6495ED;" href="/#/home/productDetail">+</a>
+              </li>
+              <li>
+                <a style="background-color: #483D8B;" href="/#/home/productDetail">+</a>
+              </li>
+              <li>
+                <a style="background-color: #CD5C5C;" href="/#/home/productDetail">+</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="product-size row align-items-end">
+          <div class="heading">Size</div>
+          <div class="size">
+            <ul>
+              <li>
+                <a href="" class="active">Xs</a>
+              </li>
+              <li>
+                <a href="">S</a>
+              </li>
+              <li>
+                <a href="">M</a>
+              </li>
+              <li>
+                <a href="">L</a>
+              </li>
+              <li>
+                <a href="">XL</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="product-quantity">
+          <div class="heading">Quantity</div>
+          <div class="quantity">
+            <button>
+              <i class="fa fa-minus"></i>
+            </button>
+            <input type="number" min="0" value="1">
+            <button>
+              <i class="fa fa-plus"></i>
+            </button>
+          </div>
+        </div>
+        <div class="product-btn">
+          <div class="row">
+            <div class="col-8 btn-add">
+              <a (click)="onAddToCart(productDetail)">
+                <span>
+                  <i class="fa fa-heart"></i>
+                </span>
+                Add to Cart
+              </a>
+            </div>
+            <div class="col-4 btn-wl">
+              <a class="btn-wishlist" (click)="onFavorite(productDetail.id)">
+                <span>
+                  <i class="fa fa-heart"></i>
+                </span>
+                Wishlist
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="text-ship">
+          Free Standard Delivery on Purchase above 100$
+        </div>
+      </div>
+      <!-- collsnap -->
+      <div class="row">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <!-- 1 -->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  Product Description
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                <p>
+                  {{productDetail.description}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="you-may-like text-center">
+      <div class="heading">
+        YOU MAY ALSO LIKE
+      </div>
+      <div class="row our-blog">
+        <div class="col-md-3" *ngFor="let item of Likes">
+          <div class="card card-blog">
+            <img src="{{item.src}}" alt="image">
+          </div>
+          <div class="title-blog">
+            <a href="/#/home/cart">
+              {{item.title}}
+            </a>
+            <p class="text-center">{{item.price | currency:"USD":"symbol":"0.0"}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

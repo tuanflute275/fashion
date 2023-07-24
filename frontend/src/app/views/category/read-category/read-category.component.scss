@@ -1,0 +1,24 @@
+.btn-add{
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  background: #2199e8;
+  margin-right: 15px !important;
+}
+.btn-get{
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  background: #2199e8;
+}
+#search-box{
+  background: #fff;
+  padding: 0 5px;
+  border-radius: 5px;
+  #search-box__input{
+    border: none;
+    outline: none;
+    padding: 10px 5px;
+  }
+  #search-box__btn{
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+}
